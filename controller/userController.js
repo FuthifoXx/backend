@@ -46,7 +46,7 @@ exports.userSignIn = async (req, res) => {
   }
 };
 
-//Get one by name
+//Get one by id
 exports.getOneById = async (req, res) => {
   try {
     const users = await userModel.findById(req.params.id);

@@ -1,4 +1,4 @@
-const { uploadProduct } = require('../upload');
+// const { uploadProduct } = require('../upload');
 const userController = require('../controller/userController');
 const express = require('express');
 const multer = require('../config/cloudinary');
@@ -14,7 +14,8 @@ userRoutes.patch('/update-user/:id', userController.updateUser);
 userRoutes.delete('/delete-user-name', userController.getOneAndDelete);
 userRoutes.delete('/delete-user/:id', userController.deleteUser);
 
-userRoutes.post('/create-product/:userId', uploadProduct);
+// userRoutes.post('/create-product/:userId', uploadProduct);
+userRoutes.post('/create-product/:userId');
 
 module.exports = userRoutes;
 

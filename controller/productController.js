@@ -11,7 +11,7 @@ exports.createProducts = async (req, res) => {
       req.body;
     const getUserId = await userModel.findById(req.params.userId);
 
-    // const upload = await cloudinary.uploader.upload(req.file.path);
+    const upload = await cloudinary.uploader.upload(req.file.path);
 
     const product = await productModel.create({
       productImage: upload.secure_url,
@@ -28,7 +28,7 @@ exports.createProducts = async (req, res) => {
       data: product,
     });
   } catch (error) {
-    console.log('unable to place your order');
+    console.log('unable to place your order', error);
   }
 };
 
@@ -37,12 +37,12 @@ exports.getAll = async (req, res) => {
   try {
     const products = await productModel.find();
     return res.status(201).json({
-      message: 'Total cart items',
+      message: 'Total Products',
       data: products,
     });
   } catch (error) {
     return res.status(400).json({
-      message: 'Cart items not found',
+      message: 'Product not found',
       error,
     });
   }
@@ -53,12 +53,12 @@ exports.getOneById = async (req, res) => {
   try {
     const product = await productModel.findById(req.params.id);
     return res.status(200).json({
-      message: 'Cart item',
+      message: 'Product Found',
       data: product,
     });
   } catch (error) {
     return res.status(400).json({
-      message: 'Cart item not found',
+      message: 'Product not found',
       error,
     });
   }
@@ -96,7 +96,7 @@ exports.deleteProduct = async (req, res) => {
     });
   } catch (error) {
     return res.status(400).json({
-      message: "couldn't item",
+      message: "couldn't delete Product",
       error,
     });
   }

@@ -1,4 +1,5 @@
 const productController = require('../controller/productController');
+// const { uploadProduct } = require('../upload');
 const express = require('express');
 const upload = require('../config/multer');
 const userRoutes = require('./userRoute');
@@ -15,6 +16,7 @@ productRoutes.patch('/update-product/:id', productController.updateProduct);
 productRoutes.delete('/delete-product/:id', productController.deleteProduct);
 
 //products
-userRoutes.post('/create-product/:userId', uploadProduct);
+// userRoutes.post('/create-product/:userId', uploadProduct);
+userRoutes.post('/create-product/:userId');
 
 module.exports = productRoutes;

@@ -4,7 +4,7 @@ const cors = require('cors');
 const userRoutes = require('./route/userRoute');
 const productRoutes = require('./route/productRoute');
 const app = express();
-const PORT = 3000;
+const PORT = 2200;
 // const live_uri =
 //   'mongodb+srv://futhifoxmaseko:FuthiFoXx_54140@cluster0.y7f3g.mongodb.net/myStore?retryWrites=true&w=majority&appName=Cluster0';
 

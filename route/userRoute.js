@@ -31,7 +31,6 @@
 
 // // -design a product/catalog page
 
-// // [1:57 PM] Ogbu Esther Uzoma
 // // deploy the frontend and send me the deployed URL via my mail on or before Friday 3:30pm
 
 // const { uploadProduct } = require('../upload');

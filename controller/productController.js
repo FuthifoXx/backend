@@ -19,7 +19,7 @@ exports.createProducts = async (req, res) => {
       productDetails,
       price,
     });
-
+    console.log(getUserId);
     getUserId.products.push(product?._id);
     getUserId.save();
 
